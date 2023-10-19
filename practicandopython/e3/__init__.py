@@ -11,8 +11,8 @@ if __name__ == '__main__':
             remaining_years = year2 - year
             print("Remaining years:", remaining_years)
         else:
-            yearss =year - year2
-            print("The entered year is not in the future.")
+            remaining_years =year - year2
+            print("years ago ", remaining_years)
 
     except ValueError:
         print('input error')
