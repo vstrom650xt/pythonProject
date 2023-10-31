@@ -20,7 +20,7 @@ def horaAdia(num):
     return int(num) // 24
 
 
-if __name__ == '__main':
+if __name__ == '__main__':
     second = 7400
     print(second)
 
