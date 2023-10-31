@@ -1,11 +1,7 @@
-# Leer tres números enteros ingresados por el usuario
-numero1 = int(input("Ingrese el primer número: "))
-numero2 = int(input("Ingrese el segundo número: "))
-numero3 = int(input("Ingrese el tercer número: "))
+number1 = int(input("Enter the first number: "))
+number2 = int(input("Enter the second number: "))
+number3 = int(input("Enter the third number: "))
 
-# Encontrar el número máximo usando la función max()
-maximo = max(numero1, numero2, numero3)
+maximum = max(number1, number2, number3)
 
-# Mostrar el resultado
-print(f"El número máximo es: {maximo}")
-
+print(f"The maximum number is: {maximum}")

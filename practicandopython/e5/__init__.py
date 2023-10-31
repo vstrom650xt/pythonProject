@@ -1,21 +1,18 @@
 import math
 
-# Solicitar al usuario qué área desea calcular
-opcion = input("¿Desea calcular el área de un triángulo o un círculo? (triángulo/círculo): ").lower()
+choice = input("Do you want to calculate the area of a triangle or a circle? (triangle/circle): ").lower()
 
-if opcion.lower() == "triángulo":
-    # Calcular el área de un triángulo
-    base = float(input("Ingrese la longitud de la base del triángulo: "))
-    altura = float(input("Ingrese la altura del triángulo: "))
-    area_triangulo = 0.5 * base * altura
-    print(f"El área del triángulo es: " + str(area_triangulo))
+if choice == "triangle":
+    # Calculate the area of a triangle
+    base = float(input("Enter the length of the triangle's base: "))
+    height = float(input("Enter the height of the triangle: "))
+    triangle_area = 0.5 * base * height
+    print(f"The area of the triangle is: " + str(triangle_area))
 
-
-elif opcion.lower() == "círculo":
-    radio = float(input("Ingrese el radio del círculo: "))
-    area_circulo = math.pi * (radio ** 2)
-    print(f"El área del círculo es: {area_circulo:.2f}")
+elif choice == "circle":
+    radius = float(input("Enter the radius of the circle: "))
+    circle_area = math.pi * (radius ** 2)
+    print(f"The area of the circle is: {circle_area:.2f}")
 
 else:
-    print("Opción no válida. Por favor, elija 'triángulo' o 'círculo'.")
-
+    print("Invalid option. Please choose 'triangle' or 'circle'.")

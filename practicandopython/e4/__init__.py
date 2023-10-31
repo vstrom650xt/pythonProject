@@ -1,17 +1,17 @@
-numero1 = int(input("Ingrese el primer número entero: "))
-numero2 = int(input("Ingrese el segundo número entero: "))
+number1 = int(input("Enter the first integer: "))
+number2 = int(input("Enter the second integer: "))
 
-if numero1 > numero2:
-    mayor = numero1
-    menor = numero2
-elif numero2 > numero1:
-    mayor = numero2
-    menor = numero1
+if number1 > number2:
+    greater = number1
+    smaller = number2
+elif number2 > number1:
+    greater = number2
+    smaller = number1
 else:
-    print("Los números son iguales. No se puede determinar si uno es múltiplo del otro.")
+    print("The numbers are equal. It cannot be determined if one is a multiple of the other.")
     exit()
 
-if mayor % menor == 0:
-    print(f"{mayor} es múltiplo de {menor}.")
+if greater % smaller == 0:
+    print(f"{greater} is a multiple of {smaller}.")
 else:
-    print(f"{mayor} no es múltiplo de {menor}.")
+    print(f"{greater} is not a multiple of {smaller}.")
