@@ -1,12 +1,10 @@
-# Solicitar información al usuario sobre las notas de las evaluaciones
-nota_primera_evaluacion = input("¿Ha suspendido la primera evaluación? (S/N): ").upper()
-nota_segunda_evaluacion = input("¿Ha suspendido la segunda evaluación? (S/N): ").upper()
-nota_tercera_evaluacion = input("¿Ha suspendido la tercera evaluación? (S/N): ").upper()
+first_evaluation_grade = input("Did the student fail the first evaluation? (Y/N): ").upper()
+second_evaluation_grade = input("Did the student fail the second evaluation? (Y/N): ").upper()
+third_evaluation_grade = input("Did the student fail the third evaluation? (Y/N): ").upper()
 
-# Determinar si el alumno puede aprobar el curso en convocatoria ordinaria
-if nota_primera_evaluacion == "S" and nota_segunda_evaluacion == "S" and nota_tercera_evaluacion == "S":
-    print("El alumno ha suspendido todas las evaluaciones y no puede aprobar el curso en convocatoria ordinaria.")
-elif nota_primera_evaluacion == "N" or nota_segunda_evaluacion == "N" or nota_tercera_evaluacion == "N":
-    print("El alumno ha aprobado al menos una de las evaluaciones y puede aprobar el curso en convocatoria ordinaria.")
+if first_evaluation_grade == "Y" and second_evaluation_grade == "Y" and third_evaluation_grade == "Y":
+    print("The student has failed all evaluations and cannot pass the course in the regular session.")
+elif first_evaluation_grade == "N" or second_evaluation_grade == "N" or third_evaluation_grade == "N":
+    print("The student has passed at least one of the evaluations and can pass the course in the regular session.")
 else:
-    print("El alumno ha suspendido todas las evaluaciones, pero puede aprobar el curso en convocatoria ordinaria debido a que se permite aprobar con la primera evaluación suspendida.")
+    print("The student has failed all evaluations but can still pass the course in the regular session because passing with the first evaluation failed is allowed.")

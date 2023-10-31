@@ -6,23 +6,32 @@
 
 def inAsec(num):
     return int(num) % 60
-def secAmin(num , numSec):
-    return int(num) / 60
+
+
+def secAmin(num):
+    return int(num) // 60
+
+
 def minAhoras(num):
-    return int(num) / 60
+    return int(num) // 60
+
+
 def horaAdia(num):
-    return int(num) / 24
+    return int(num) // 24
+
 
 if __name__ == '__main__':
-  #  second = input("pon segundos")
     second = 7400
-    sec = inAsec(second)
-    print('segundos ' + str(sec))
-    min = secAmin(second) - sec
-    print('minutos ' + str(min))
+    print(second)
 
-    # print(secAmin(second))
-    # min = secAmin(second)
-    # print(minAhoras(min -second))
-    # hora = horaAdia(min)
-    # print(horaAdia(min))
+    sec = inAsec(second)
+    print('segundos:', sec)
+
+    min = secAmin(second)
+    print('minutos:', min)
+
+    hours = minAhoras(min)
+    print('horas:', hours)
+
+    days = horaAdia(hours)
+    print('días:', days)
