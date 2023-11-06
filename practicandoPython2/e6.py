@@ -6,8 +6,6 @@
 # demasiado complicado , he usado macchanger para facilitarlo
 
 import subprocess
-
-
 def cambiarMac():
     comando = ["sudo", "ifconfig", "enp4s0", "down"]
     subprocess.run(comando)

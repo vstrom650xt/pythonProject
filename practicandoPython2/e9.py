@@ -2,22 +2,22 @@ import random
 import time
 
 def adivinar_numero():
-    numero_aleatorio = random.randint(0, 100)
+    num = random.randint(0, 100)
     intentos = 0
     inicioTiempo = time.time()
 
     while True:
-        intento = int(input("Adivina el número (entre 0 y 100): "))
+        intento = int(input("adivina el num "))
         intentos += 1
 
-        if intento < numero_aleatorio:
-            print("El número es más grande.")
-        elif intento > numero_aleatorio:
-            print("El número es más pequeño.")
+        if intento < num:
+            print("mas grande")
+        elif intento > num:
+            print("mas pequeño.")
         else:
             finTiempo = time.time()
-            tiempo_transcurrido = finTiempo - inicioTiempo
-            print(f"Felicidades, adivinaste el número {numero_aleatorio} en {intentos} intentos y {tiempo_transcurrido:.2f} segundos.")
+            totalTiempo = finTiempo - inicioTiempo
+            print("numerp de intentos"+ str(intento)+ "tiempo " + str(totalTiempo) + "el nuumero era el " + str(num))
             break
 
 if __name__ == '__main__':

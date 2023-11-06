@@ -4,7 +4,7 @@
 #- Los meses 4, 6, 9 y 11 tienen 30 días.
 #- El mes 2 tiene 28 días, excepto cuando el año es divisible por 4, que tiene 29 días. (¡pero no cuando es divisible por 100, a menos que sea divisible también por 400!)
 #Pista: para saber si un número es divisible por 4, pregunta si el resto de dividirlo por 4 es cero.
-def es_bisiesto(year):
+def bisiesto(year):
     if year % 4 == 0:
         if year % 100 == 0:
             if year % 400 == 0:
@@ -13,7 +13,7 @@ def es_bisiesto(year):
         return True
     return False
 
-def validar_fecha(dia, mes, anio):
+def validarFecha(dia, mes, anio):
     if mes < 1 or mes > 12:
         return False
 
@@ -22,7 +22,7 @@ def validar_fecha(dia, mes, anio):
     elif mes in [4, 6, 9, 11]:
         return dia > 0 and dia <= 30
     elif mes == 2:
-        if es_bisiesto(anio):
+        if bisiesto(anio):
             return dia > 0 and dia <= 29
         return dia > 0 and dia <= 28
 
@@ -33,7 +33,7 @@ if __name__ == '__main__':
     mes = int(input("Ingresa el mes "))
     anio = int(input("Ingresa el año "))
 
-    if validar_fecha(dia, mes, anio):
+    if validarFecha(dia, mes, anio):
         print("La fecha ingresada es valida.")
     else:
         print("La fecha ingresada no es valida.")
