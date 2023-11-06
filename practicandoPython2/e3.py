@@ -1,24 +1,17 @@
-import random
-import time
+#3. Crea un programa en Python que pida una contraseña por
+# teclado e indique si es correcta o incorrecta. La contraseña
+# # correcta es “iloveyou123”. Una vez funcione, añade código para que
+# si la contraseña era incorrecta la pida de nuevo.
 
-def adivinar_numero():
-    numero_aleatorio = random.randint(0, 100)
-    intentos = 0
-    inicio_tiempo = time.time()
+if __name__=='__main__':
+    intento1  =input('pon contraseña')
+    intento2 = input('otra vez')
+    while intento1 != intento2:
+        intento1 = input('pon contraseña')
+        intento2 = input('otra vez')
 
-    while True:
-        intento = int(input("Adivina el número (entre 0 y 100): "))
-        intentos += 1
+print('ya son iguales')
 
-        if intento < numero_aleatorio:
-            print("El número es más grande.")
-        elif intento > numero_aleatorio:
-            print("El número es más pequeño.")
-        else:
-            fin_tiempo = time.time()
-            tiempo_transcurrido = fin_tiempo - inicio_tiempo
-            print(f"Felicidades, adivinaste el número {numero_aleatorio} en {intentos} intentos y {tiempo_transcurrido:.2f} segundos.")
-            break
 
-if __name__ == '__main__':
-    adivinar_numero()
+
+
