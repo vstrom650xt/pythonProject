@@ -3,19 +3,54 @@
 # MAC (validando que sea un formato de MAC correcto) y que realice el cambio utilizando el
 # comando ifconfig y el comando ip (preguntando con cual de los dos se quiere realizar).
 
-# demasiado complicado , he usado macchanger para facilitarlo
 
 import subprocess
-def cambiarMac():
-    comando = ["sudo", "ifconfig", "enp4s0", "down"]
+import re
+
+
+def elegirInterfaz():
+    interfaces = subprocess.check_output(["ls", "/sys/class/net"]).decode('utf-8').split()
+    print("Interfaces de red disponibles:")
+    for i in interfaces:
+        print(i)
+
+    respuesta = input("pon nombre de la interfaz ").strip()
+
+    if respuesta in interfaces:
+        return respuesta
+    else:
+        print(" no existe.")
+        return None
+
+
+
+def cambiarMac(interface, new_mac):
+    comando = ["sudo", "ifconfig", interface, "down"]
     subprocess.run(comando)
 
-    comando = ["sudo", "macchanger", "enp4s0", "-r"]
+    comando = ["sudo", "ifconfig", interface, "hw", "ether", new_mac]
     subprocess.run(comando)
 
-    comando = ["sudo", "ifconfig", "enp4s0", "up"]
+    comando = ["sudo", "ifconfig", interface, "up"]
     subprocess.run(comando)
+
+
+def comprobarText():
+    texto = subprocess.check_output(["ifconfig"]).decode('utf-8')
+    macactual = re.search("\w\w:\w\w:\w\w:\w\w:\w\w:\w\w", texto)
+    print(macactual)
+    return  macactual
 
 
 if __name__ == "__main__":
-    cambiarMac()
+
+    comprobarText()
+    interface = elegirInterfaz()
+    if interface:
+        nuevaMac = input("pon nueva mac ").strip()
+
+        while len(nuevaMac) == 17 and nuevaMac.count(":") == 5:
+            cambiarMac(interface, nuevaMac)
+            nuevaMac = input("pon nueva mac ").strip()
+
+        print(" mac  cambiado ")

@@ -1,12 +1,13 @@
 import random
 import time
 
-def adivinar_numero():
+def adivinarNum():
     num = random.randint(0, 100)
     intentos = 0
     inicioTiempo = time.time()
 
     while True:
+
         intento = int(input("adivina el num "))
         intentos += 1
 
@@ -21,4 +22,4 @@ def adivinar_numero():
             break
 
 if __name__ == '__main__':
-    adivinar_numero()
+    adivinarNum()
