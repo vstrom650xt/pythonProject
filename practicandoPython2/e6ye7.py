@@ -38,7 +38,8 @@ def cambiarMac(interface, new_mac):
 def comprobarText():
     texto = subprocess.check_output(["ifconfig"]).decode('utf-8')
     macactual = re.search("\w\w:\w\w:\w\w:\w\w:\w\w:\w\w", texto)
-    print(macactual)
+    print("tu mac actual es")
+    print(macactual.group(0))
     return  macactual
 
 
