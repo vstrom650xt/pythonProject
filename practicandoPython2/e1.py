@@ -21,8 +21,14 @@ def horaAdia(num):
 
 
 if __name__ == '__main__':
-    second = 7400
-    print(second)
+
+    while True:
+        try:
+            second = int(input('Ingrese los segundos: '))
+            break
+        except ValueError:
+            print('Ingrese un número válido.')
+            continue
 
     sec = inAsec(second)
     print('segundos:', sec)

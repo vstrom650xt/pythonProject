@@ -1,7 +1,7 @@
 
 if __name__ == '__main__':
-    numhoras = input("write num hours ")
-    num2 = input("write price * h ")
+    numhoras = input("escribe num horas ")
+    num2 = input("precio * h ")
     numfijo = int(22)
     aprtHora = int(8)
 

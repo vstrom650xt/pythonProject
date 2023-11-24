@@ -1,8 +1,8 @@
 if __name__ == '__main__':
     while True:
         try:
-            numhoras = input("Ingrese el número de horas trabajadas: ")
-            num2 = input("Ingrese el precio por hora: ")
+            numhoras = input(" num horas ")
+            num2 = input("precio * h ")
 
             numhoras = int(numhoras)
             num2 = float(num2)
@@ -20,4 +20,4 @@ if __name__ == '__main__':
             print("El salario es:", salario)
             break  # Break the loop if valid inputs and calculation are successful
         except ValueError:
-            print("Error: Ingrese un número válido para las horas y el precio por hora.")
+            print("Error: introducir valores numéricos")
