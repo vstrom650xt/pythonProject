@@ -1,2 +1,4 @@
 Hola, este es un ejemplo de escritura en un archivo en Python.
 Aquí puedes agregar más líneas si deseasadsadsadasddsaass.
+
+ otralinea
